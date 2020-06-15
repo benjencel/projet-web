@@ -1,0 +1,108 @@
+* {
+	font-family: Trebuchet MS;
+	margin: 0;
+	padding: 0;
+}
+
+body
+{ 
+    color: #B0B0B0;
+	/*background-color: rgb(66,67,62);*/
+	background-image:  url(1920.jpg);
+	background-attachment: fixed;
+}
+
+header
+{
+    /*background-color:#181F5E*/;
+    padding: 20px;
+
+}
+header h1
+{
+	width : 250 px;
+}
+header h2
+{
+	width : 150 px;
+	text-align: center ;
+
+}
+header nav 
+{
+	float: right ;
+}
+header : after
+{
+	display : block;
+	content :"";
+	clear : both;
+}
+header nav li 
+{
+	list-style: none;
+	float: left;
+	margin-left: 20px;
+}
+
+header nav li a
+{
+	text-decoration: none ;
+	color: white ; 
+	text-transform: uppercase;
+	font-weight : bold;
+}
+
+header p
+{
+	text-align: right;
+}
+
+
+div
+{
+	margin-right : 50px ;
+	margin-left : 5px;
+}
+body
+{
+	background-color: rgb(66,67,62);	
+	color: #B0B0B0;
+}
+
+body main
+ {
+ 	
+ 	margin-top: 20px;
+ 	margin-right: 50px;
+ 	margin-left: 50px;
+ 	margin-bottom: 20px;
+	padding : 5px;
+
+	
+ }
+
+ fieldset 
+ {
+ 	margin : 20px;
+ 	width : 30%;
+ 	float : left;
+ }
+
+.choix
+{
+	width : 50 %;
+}
+
+.centrer, .bouton
+{
+	text-align: center ;
+
+}
+
+fieldset : after
+{
+	display : block;
+	content :"";
+	clear : both;
+}

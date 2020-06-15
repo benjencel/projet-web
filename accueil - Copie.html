@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /> 
+         <link rel="stylesheet" href="accueil.css" />
+        <title>e-sport management</title>
+    </head>
+    <body>
+        <header class="page-header">
+            <h1 class= "nomsite"> E-Sport Management</h1>
+        </header>
+        
+            <footer>
+         <ul id="nav">
+           <li><a href="#">Qui sommes-nous?</a></li>
+           <li><a href="#">contact</a></li>
+        </ul>
+    </footer>
+
+    <form class="formulaire" method="post" onsubmit="return false">
+          
+            <label for="nomj1">Joueur 1 :</label>
+            <input type="text" class= "choose" id="nomj1" name ="Fname" placeholder="Ex : Hubert" required>
+         
+            <label for="scorej1">Score :</label>
+            <input type="number" class= "choose"  id="scorej1" name ="Lname">
+
+            <label for="nomj2">Joueur 2 :</label>
+            <input type="text" class= "choose" id="nomj2" name ="Fname" placeholder="Ex : Hubert" required>
+         
+            <label for="scorej2">Score :</label>
+            <input type="number" class= "choose"  id="scorej2" name ="Lname">
+            
+            
+            
+            <p>
+                <button class="bouton" id="bouton_ajout" onclick="ajouter()" disabled>Ajouter</button> 
+                <button class="bouton" onclick="document.location.reload(false)">Tout supprimer</button>
+            </p>
+        </form>
+    </header>
+    <br /><br /><br />
+    <main class="formulaire">
+        <table id="tableau">
+            <tr>
+                <td>Joueur 1</td>
+                <td>Score</td>
+                <td>Joueur 2</td>
+                <td>Score</td>
+            </tr>
+        </table>
+
+
+    <script type="text/javascript">
+
+
+    function ajouter() {
+        // alert("benjamin");
+        if (document.getElementById('nomj1').checkValidity() && document.getElementById('scorej1').checkValidity() && document.getElementById('nomj2').checkValidity() && document.getElementById('scorej2').checkValidity()) 
+        {
+            var tableau = document.getElementById('tableau');
+            var ligne = document.createElement('tr');
+            ligne.className = 'ligne';
+
+            var colonne_nomj1 = document.createElement('td');
+            colonne_nomj1.innerText = document.getElementById('nomj1').value;
+
+            var colonne_scorej1 = document.createElement('td');
+            colonne_scorej1.innerText = document.getElementById('scorej1').value;
+
+            var colonne_nomj2 = document.createElement('td');
+            colonne_nomj2.innerText = document.getElementById('nomj2').value;
+
+            var colonne_scorej2 = document.createElement('td');
+            colonne_scorej2.innerText = document.getElementById('scorej2').value;
+
+            var ajoutun = ligne.appendChild(colonne_nomj1);
+            var ajoutdeux = ligne.appendChild(colonne_scorej1);
+            var ajouttrois = ligne.appendChild(colonne_nomj2);
+            var ajoutquatre = ligne.appendChild(colonne_scorej2);
+            var ligne_ajouter_au_tableau = tableau.appendChild(ligne);
+        }
+    }
+
+    setTimeout(function () {
+        document.getElementById('bouton_ajout').disabled = false;
+    },10000);
+
+    var compteur = 10;
+
+    rolex = setInterval(function(){
+        if(compteur>0)
+        {
+            --compteur;
+            document.getElementById("bouton_ajout").innerHTML = "Utilisation dans " + compteur + "sec" ;
+        }
+        else if (compteur == 0)
+        {
+            document.getElementById("bouton_ajout").innerHTML = "Ajouter" ;
+        }
+        else
+        {
+            clearInterval(rolex);
+        }
+    }, 1000);
+
+</script>
+    </body>
+</html>
